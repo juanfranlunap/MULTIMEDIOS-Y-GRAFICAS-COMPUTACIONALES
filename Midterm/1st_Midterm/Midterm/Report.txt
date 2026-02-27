@@ -1,0 +1,17 @@
+Program Report
+
+
+
+
+This project is a straightforward Java image editor with a graphical user interface built with Swing. The application lets the user open an image, drag the mouse over a rectangular area, and do operations including cropping, color inversion, and 90°, 180°, or 270° rotation. The image can be saved to a new file when modifications have been made. This project's goal was to integrate object-oriented programming techniques to GUI design and picture processing..
+
+To keep everything orderly and understandable, the program is divided into various classes. All of the buttons and the main window are managed by the EditorFrame class. It is in charge of creating the user interface and tying user actions to the appropriate operations. All of the logic involved in altering the image is contained in the ImageEditor class. It operates at the pixel level and works directly with a BufferedImage. 
+
+The ImagePanel class shows the image and lets the user use the mouse to pick a section. The Rect_Selection class has helpful methods such as width and height computation and simply represents the coordinates of the selected rectangle. Because each class is responsible for a certain task, this division makes the program cleaner.
+
+ImageIO is used to load an image into memory during program execution. Before making any adjustments after the user has chosen a region, the application verifies that the selection is legitimate and inside the image's bounds. For instance, while maintaining the alpha channel constant, the invert function iterates through each pixel inside the chosen region and alters each RGB value using the formula 255 - value.
+
+ Depending on the chosen angle, the rotation function generates a new image and manually remaps every pixel. Because width and height fluctuate when rotating by 90° or 270°, this necessitated precise coordinate handling. To avoid referencing the original data, the crop function substitutes a deep copy of the chosen subimage for the current image.
+
+I remember and gained experience with object oriented design and pixel picture editing through this project. Additionally, I gained a better understanding of how coordinate systems function while editing photographs and how graphical user interfaces interact with image data. I was able to have a better understanding of how the maths influence directly in programmation and his functions
+
